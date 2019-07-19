@@ -1,0 +1,40 @@
+{
+  "name": "book-review-app",
+  "version": "1.0.0",
+  "description": "TDD'ed React App",
+  "main": "index.js",
+  "repository": "https://github.com/tommywilczek/book-review-app.git",
+  "author": "tommywilczek",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "cypress": "^3.4.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.0.1",
+    "eslint-config-codingitwrong": "^0.1.4",
+    "eslint-plugin-cypress": "^2.2.1",
+    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-react": "^7.14.2",
+    "jest": "^24.8.0",
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.15",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>test/setup.js"
+    ]
+  }
+}
+
