@@ -6,6 +6,12 @@
   "repository": "https://github.com/tommywilczek/book-review-app.git",
   "author": "tommywilczek",
   "license": "MIT",
+  "scripts": {
+    "start": "clear; parcel index.html",
+    "lint": "clear; eslint cypress/integration/**/*.js src/**/*.js test/**/*.js",
+    "unit": "jest test/**/*.spec.js",
+    "e2e": "cypress open"
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
