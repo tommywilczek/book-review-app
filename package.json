@@ -4,6 +4,7 @@
   "description": "TDD'ed React App",
   "main": "index.js",
   "repository": "https://github.com/tommywilczek/book-review-app.git",
+  "homepage": "https://tommywilczek.github.io/book-review-app/",
   "author": "tommywilczek",
   "license": "MIT",
   "scripts": {
