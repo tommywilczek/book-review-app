@@ -11,15 +11,16 @@ cache:
   - node_modules
   - ~/.cache
 install:
-  - npm ci
+  - yarn install --frozen-lockfile
 script:
   - yarn unit
   - yarn build
-  - $(npm bin)/cypress run --record
+  - $(yarn bin)/cypress run --record
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  cypress_record_key: $CYPRESS_RECORD_KEY
   local_dir: dist
   on:
     branch: master
