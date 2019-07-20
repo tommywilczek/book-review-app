@@ -12,6 +12,7 @@ cache:
   - ~/.cache
 install:
   - yarn install --frozen-lockfile
+  - cypress install
 script:
   - yarn unit
   - yarn build
