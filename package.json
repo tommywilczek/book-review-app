@@ -8,6 +8,7 @@
   "author": "tommywilczek",
   "license": "MIT",
   "scripts": {
+    "build": "parcel build index.html",
     "start": "clear; parcel index.html",
     "lint": "clear; eslint cypress/integration/**/*.js src/**/*.js test/**/*.js",
     "unit": "jest test/**/*.spec.js",
