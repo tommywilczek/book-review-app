@@ -16,6 +16,7 @@ install:
 script:
   - yarn unit
   - yarn build
+  - yarn start & wait-on http://localhost:1234
   - $(yarn bin)/cypress run --record
 deploy:
   provider: pages
