@@ -28,7 +28,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.0.1",
     "eslint-config-codingitwrong": "^0.1.4",
-    "eslint-plugin-cypress": "^2.2.1",
+    "eslint-plugin-cypress": "^2.6.0",
     "eslint-plugin-jest": "^22.7.2",
     "eslint-plugin-react": "^7.14.2",
     "jest": "^24.8.0",
