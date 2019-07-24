@@ -10,10 +10,9 @@ describe('adding a book', () => {
     cy.get('[data-test="newBookTitleField"]')
       .type(bookTitle);
 
-      
     cy.get('[data-test="saveBookBtn"]')
-    .click();
+      .click();
 
-  cy.contains(bookTitle);
+    cy.contains(bookTitle);
   });
 });

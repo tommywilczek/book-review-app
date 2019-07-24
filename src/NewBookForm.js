@@ -1,38 +1,38 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class NewBookForm extends Component {
     state = {
-        bookName: ''
+      bookName: '',
     }
 
     handleTextChange = (event) => {
-        this.setState({ bookName: event.target.value });
+      this.setState({ bookName: event.target.value });
     }
-    
-    saveBook = () => {
-        const { bookName } = this.state;
-        const { onSave } = this.props;
 
-        onSave(bookName);
+    saveBook = () => {
+      const { bookName } = this.state;
+      const { onSave } = this.props;
+
+      onSave(bookName);
     }
-    
+
     render() {
-        const { bookName } = this.state;
-        return (
-            <div>
-                <input 
-                    type="text"
-                    value={bookName}
-                    data-test="newBookTitleField" 
-                    onChange={this.handleTextChange}
-                />
-                <button 
-                    data-test="saveBookBtn"
-                    onClick={this.saveBook}
-                >
+      const { bookName } = this.state;
+      return (
+        <div>
+          <input
+            type="text"
+            value={bookName}
+            data-test="newBookTitleField"
+            onChange={this.handleTextChange}
+          />
+          <button
+            data-test="saveBookBtn"
+            onClick={this.saveBook}
+          >
                     Save
-                </button>
-            </div>
-        )
+          </button>
+        </div>
+      );
     }
 }
