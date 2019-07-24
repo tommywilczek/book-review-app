@@ -6,18 +6,18 @@ describe('adding a book', () => {
 
     cy.get('[data-test="newBookTitleField')
       .should('not.exist');
-      
-      cy.get('[data-test="addBookBtn"]')
-      .click();
-      
-      cy.get('[data-test="newBookTitleField"]')
-      .type(bookTitle);
-      
-      cy.get('[data-test="saveBookBtn"]')
+
+    cy.get('[data-test="addBookBtn"]')
       .click();
 
-      cy.get('[data-test="newBookTitleField')
-        .should('not.exist');
+    cy.get('[data-test="newBookTitleField"]')
+      .type(bookTitle);
+
+    cy.get('[data-test="saveBookBtn"]')
+      .click();
+
+    cy.get('[data-test="newBookTitleField')
+      .should('not.exist');
 
     cy.contains(bookTitle);
   });

@@ -5,7 +5,7 @@ import BookList from './BookList';
 export default class BookListPage extends Component {
     state = {
       bookNames: [],
-      shouldShowNewBookForm: false
+      shouldShowNewBookForm: false,
     }
 
     addBook = (newBookName) => {
@@ -20,19 +20,18 @@ export default class BookListPage extends Component {
     }
 
     showNewBookForm = () => {
-      this.setState({ shouldShowNewBookForm: true});
+      this.setState({ shouldShowNewBookForm: true });
     }
-    
 
     render() {
-      const { 
+      const {
         bookNames,
-        shouldShowNewBookForm
+        shouldShowNewBookForm,
       } = this.state;
 
       return (
         <div>
-          <button 
+          <button
             data-test="addBookBtn"
             onClick={this.showNewBookForm}
           >
@@ -40,9 +39,9 @@ export default class BookListPage extends Component {
           </button>
           {shouldShowNewBookForm
             ?
-              <NewBookForm 
-                onSave={this.addBook}
-              />
+            <NewBookForm
+              onSave={this.addBook}
+            />
             : null
           }
           <BookList bookNames={bookNames} />
