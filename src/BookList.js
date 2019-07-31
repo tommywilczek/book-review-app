@@ -15,17 +15,16 @@ const BookList = ({ bookNames }) => {
           </Typography>
         </Toolbar>
       </AppBar>
-        <BookItems bookNames={bookNames}/>
+      <BookItems bookNames={bookNames}/>
     </div>
   );
-
 };
 
 const BookItems = ({ bookNames }) => (
   bookNames.length > 0
     ? <SomeBookItems bookNames={bookNames} />
     : <NoBookItems />
-)
+);
 
 const SomeBookItems = ({ bookNames }) => (
   bookNames.map(bookName => (
@@ -37,16 +36,16 @@ const SomeBookItems = ({ bookNames }) => (
       </CardContent>
     </Card>
   ))
-)
+);
 
 const NoBookItems = () => (
   <Card>
     <CardContent>
-      <Typography style={{color: "gray"}}>
+      <Typography style={{ color: "gray" }}>
         (No books yet)
       </Typography>
     </CardContent>
   </Card>
-)
+);
 
 export default BookList;

@@ -27,8 +27,8 @@ export default class BookListPage extends Component {
     renderNewBookForm() {
       if (this.state.shouldShowNewBookForm) {
         return <NewBookForm
-                onSave={this.addBook}
-              />
+          onSave={this.addBook}
+        />;
       }
     }
 
