@@ -33,7 +33,7 @@ export default class NewBookForm extends Component {
             data-test="saveBookBtn"
             onClick={this.saveBook}
           >
-                    Save
+            Save
           </Button>
         </div>
       );

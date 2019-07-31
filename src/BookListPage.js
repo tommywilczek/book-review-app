@@ -24,11 +24,16 @@ export default class BookListPage extends Component {
       this.setState({ shouldShowNewBookForm: true });
     }
 
+    renderNewBookForm() {
+      if (this.state.shouldShowNewBookForm) {
+        return <NewBookForm
+                onSave={this.addBook}
+              />
+      }
+    }
+
     render() {
-      const {
-        bookNames,
-        shouldShowNewBookForm,
-      } = this.state;
+      const { bookNames } = this.state;
 
       return (
         <div>
@@ -37,15 +42,9 @@ export default class BookListPage extends Component {
             data-test="addBookBtn"
             onClick={this.showNewBookForm}
           >
-                    Add Book
+            Add Book
           </Button>
-          {shouldShowNewBookForm
-            ?
-            <NewBookForm
-              onSave={this.addBook}
-            />
-            : null
-          }
+          {this.renderNewBookForm()}
           <BookList bookNames={bookNames} />
         </div>
       );
