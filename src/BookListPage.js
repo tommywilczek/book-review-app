@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 import NewBookForm from './NewBookForm';
 import BookList from './BookList';
 
@@ -31,12 +32,13 @@ export default class BookListPage extends Component {
 
       return (
         <div>
-          <button
+          <Button
+            variant="contained" color="primary"
             data-test="addBookBtn"
             onClick={this.showNewBookForm}
           >
                     Add Book
-          </button>
+          </Button>
           {shouldShowNewBookForm
             ?
             <NewBookForm

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 export default class NewBookForm extends Component {
     state = {
@@ -20,18 +22,19 @@ export default class NewBookForm extends Component {
       const { bookName } = this.state;
       return (
         <div>
-          <input
-            type="text"
+          <TextField
+            label="Name"
             value={bookName}
             data-test="newBookTitleField"
             onChange={this.handleTextChange}
           />
-          <button
+          <Button
+            variant="contained" color="primary"
             data-test="saveBookBtn"
             onClick={this.saveBook}
           >
                     Save
-          </button>
+          </Button>
         </div>
       );
     }

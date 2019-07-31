@@ -1,14 +1,24 @@
 import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import styles from './BookList.module.css';
 
 const BookList = ({ bookNames }) => {
   return (
-    <ul>
+    <div>
       {
         bookNames.map(bookName => (
-          <li key={bookName}>{bookName}</li>
+          <Card key={bookName} m="200px">
+            <CardContent>
+              <Typography>
+                {bookName}
+              </Typography>
+            </CardContent>
+          </Card>
         ))
       }
-    </ul>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ describe('adding a book', () => {
     cy.get('[data-test="addBookBtn"]')
       .click();
 
-    cy.get('[data-test="newBookTitleField"]')
+    cy.get('[data-test="newBookTitleField"]').children().children('input')
       .type(bookTitle);
 
     cy.get('[data-test="saveBookBtn"]')

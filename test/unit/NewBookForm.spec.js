@@ -12,11 +12,11 @@ describe('NewBookForm', () => {
       const newBookFormComponent = mount(<NewBookForm onSave={saveHandler} />);
 
       newBookFormComponent
-        .find('[data-test="newBookTitleField"]')
+        .find('[data-test="newBookTitleField"]').find('input')
         .simulate('change', { target: { value: bookName } }); // simulating the 'event.target.value'
 
       newBookFormComponent
-        .find('[data-test="saveBookBtn"]')
+        .find('button[data-test="saveBookBtn"]')
         .simulate('click');
 
       expect(saveHandler).toHaveBeenCalledWith(bookName);
