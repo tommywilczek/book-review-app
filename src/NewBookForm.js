@@ -21,6 +21,7 @@ export default class NewBookForm extends Component {
 
     render() {
       const { bookName } = this.state;
+      const { onCancel } = this.props;
       return (
         <div>
           <TextField
@@ -28,8 +29,16 @@ export default class NewBookForm extends Component {
             value={bookName}
             data-test="newBookTitleField"
             onChange={this.handleTextChange}
+            autoFocus={true}
           />
           <DialogActions>
+            <Button
+              style={{ color: "gray" }}
+              onClick={onCancel}
+              data-test="cancelBtn"
+            >
+              Cancel
+            </Button>
             <Button
               color="primary"
               data-test="saveBookBtn"

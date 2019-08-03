@@ -7,6 +7,21 @@ describe('adding a book', () => {
     cy.get('[data-test="newBookTitleField')
       .should('not.exist');
 
+    // Open Modal
+    cy.get('[data-test="addBookBtn"]')
+      .click();
+
+    // Should be focused on the input
+    cy.focused().parent().parent().should('have.attr', 'data-test', 'newBookTitleField')
+
+    // Cancel Modal should work
+    cy.get('[data-test="cancelBtn"]')
+      .click();
+
+    cy.get('[data-test="newBookTitleField')
+      .should('not.exist');
+
+    // Modal should save
     cy.get('[data-test="addBookBtn"]')
       .click();
 

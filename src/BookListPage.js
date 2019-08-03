@@ -54,7 +54,7 @@ export default class BookListPage extends Component {
           <Dialog open={shouldShowNewBookForm} onClose={this.closeModal} aria-labelledby="add-book-dialog-title">
             <DialogTitle id="add-book-dialog-title">Add a book</DialogTitle>
             <DialogContent>
-              <NewBookForm onSave={this.addBook} />
+              <NewBookForm onSave={this.addBook} onCancel={this.closeModal} />
             </DialogContent>
           </Dialog>
 
