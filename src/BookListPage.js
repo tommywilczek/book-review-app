@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import Typography from '@material-ui/core/Typography';
+
 import NewBookForm from './NewBookForm';
 import BookList from './BookList';
 
@@ -20,31 +26,36 @@ export default class BookListPage extends Component {
       );
     }
 
-    showNewBookForm = () => {
+    openModal = () => {
       this.setState({ shouldShowNewBookForm: true });
     }
 
-    renderNewBookForm() {
-      if (this.state.shouldShowNewBookForm) {
-        return <NewBookForm
-          onSave={this.addBook}
-        />;
-      }
+    closeModal = () => {
+      this.setState({ shouldShowNewBookForm: false });
     }
 
     render() {
-      const { bookNames } = this.state;
+      const { 
+        bookNames,
+        shouldShowNewBookForm
+      } = this.state;
 
       return (
         <div>
           <Button
             variant="contained" color="primary"
             data-test="addBookBtn"
-            onClick={this.showNewBookForm}
+            onClick={this.openModal}
           >
             Add Book
           </Button>
-          {this.renderNewBookForm()}
+          <Dialog open={shouldShowNewBookForm} onClose={this.closeModal} aria-labelledby="add-book-dialog-title">
+            <DialogTitle id="add-book-dialog-title">Add a book</DialogTitle>
+            <DialogContent>
+              <NewBookForm onSave={this.addBook} />
+            </DialogContent>
+          </Dialog>
+
           <BookList bookNames={bookNames} />
         </div>
       );
