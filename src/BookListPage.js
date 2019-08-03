@@ -35,9 +35,9 @@ export default class BookListPage extends Component {
     }
 
     render() {
-      const { 
+      const {
         bookNames,
-        shouldShowNewBookForm
+        shouldShowNewBookForm,
       } = this.state;
 
       return (
