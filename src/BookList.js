@@ -4,6 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Grid from '@material-ui/core/Grid';
 
 const BookList = ({ bookNames }) => {
   return (
@@ -27,15 +28,19 @@ const BookItems = ({ bookNames }) => (
 );
 
 const SomeBookItems = ({ bookNames }) => (
-  bookNames.map(bookName => (
-    <Card key={bookName} m="200px">
-      <CardContent>
-        <Typography>
-          {bookName}
-        </Typography>
-      </CardContent>
-    </Card>
-  ))
+  <Grid container spacing={2}>
+    {bookNames.map(bookName => (
+      <Grid key={bookName} item xs={12}>
+        <Card>
+          <CardContent>
+            <Typography>
+              {bookName}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+    ))}
+  </Grid>
 );
 
 const NoBookItems = () => (
