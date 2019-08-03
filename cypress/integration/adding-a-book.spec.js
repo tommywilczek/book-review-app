@@ -12,7 +12,7 @@ describe('adding a book', () => {
       .click();
 
     // Should be focused on the input
-    cy.focused().parent().parent().should('have.attr', 'data-test', 'newBookTitleField')
+    cy.focused().parent().parent().should('have.attr', 'data-test', 'newBookTitleField');
 
     // Cancel Modal should work
     cy.get('[data-test="cancelBtn"]')
