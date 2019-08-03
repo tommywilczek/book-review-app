@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import DialogActions from '@material-ui/core/DialogActions';
 
 export default class NewBookForm extends Component {
     state = {
@@ -28,13 +29,15 @@ export default class NewBookForm extends Component {
             data-test="newBookTitleField"
             onChange={this.handleTextChange}
           />
-          <Button
-            variant="contained" color="primary"
-            data-test="saveBookBtn"
-            onClick={this.saveBook}
-          >
-            Save
-          </Button>
+          <DialogActions>
+            <Button
+              color="primary"
+              data-test="saveBookBtn"
+              onClick={this.saveBook}
+            >
+              Save
+            </Button>
+          </DialogActions>
         </div>
       );
     }
